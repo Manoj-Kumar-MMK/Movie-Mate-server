@@ -9,7 +9,8 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "nodemon app.js",
-		"run": "pm2 start app.js"
+		"pm2": "pm2 start app.js",
+		"stop": "pm2 stop app.js"
 	},
 	"keywords": [],
 	"author": "",
