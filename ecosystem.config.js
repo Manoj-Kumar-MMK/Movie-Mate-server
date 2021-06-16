@@ -3,7 +3,7 @@ module.exports = {
 		{
 			name: "Movie-Mate",
 			script: "app.js",
-			instances: "max",
+			instances: "1",
 			exec_mode: "cluster",
 		},
 	],
