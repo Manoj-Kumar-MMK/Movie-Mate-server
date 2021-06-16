@@ -1,1 +1,1 @@
-web: npm run pm2
+web: node app.js
