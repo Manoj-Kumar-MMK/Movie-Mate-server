@@ -1,7 +1,7 @@
 {
 	"name": "server",
 	"version": "1.0.0",
-	"description": "",
+	"description": "server for movie-mate",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -11,19 +11,24 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@heroku/buildpack-registry": "^1.0.1",
+		"async-file": "^2.0.2",
 		"axios": "^0.21.1",
 		"bcrypt": "^5.0.1",
 		"bcryptjs": "^2.4.3",
+		"cli-ux": "^4.9.3",
 		"cors": "^2.8.5",
 		"dotenv": "^10.0.0",
 		"express": "^4.17.1",
 		"forever": "^4.0.1",
+		"got": "^9.6.0",
 		"heroku": "^7.54.1",
 		"jsonwebtoken": "^8.5.1",
 		"mongoose": "^5.12.13",
 		"mongoose-double": "^0.0.1",
 		"morgan": "^1.10.0",
 		"multer": "^1.4.2",
+		"phoenix": "^1.5.9",
 		"pm2": "^5.1.0",
 		"uuid": "^8.3.2",
 		"yup": "^0.32.9"
