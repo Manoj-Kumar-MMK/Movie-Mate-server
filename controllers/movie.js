@@ -52,8 +52,11 @@ const getStudioMoviesById = async (req, res, next) => {
 		const { sid } = req.params
 
 		//find movie
-		const studio = await Studio.findById(sid, "movies")
-		if (!studio) return res.status(400).json({ error: "Studio does not exist" })
+		const studio = await Studio.findById(sid, "movies").populate(
+			"movies",
+			"name image"
+		)
+		if (!studio) return res.status(400).json({ error: "Studio not found" })
 
 		res.status(200).json(studio.movies)
 	} catch (err) {
