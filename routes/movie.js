@@ -11,6 +11,7 @@ const {
 	checkNameTaken,
 	getMovieById,
 	getStudioMovies,
+	getStudioMoviesById,
 	isInWatched,
 	isInWishlist,
 	getWatched,
@@ -31,6 +32,7 @@ const { movieSchema, movieModifySchema } = require("../validations/movie")
 //    NO   AUTH
 router.get("/id/:mid", getMovieById)
 router.get("/taken/:name", checkNameTaken)
+router.get("/studioId/:sid", getStudioMoviesById)
 
 //  STUDIO AUTH
 

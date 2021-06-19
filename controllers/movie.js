@@ -45,6 +45,23 @@ const getMovieById = async (req, res, next) => {
 }
 
 // @method ---  GET
+// @header ---
+// @params --- sid
+const getStudioMoviesById = async (req, res, next) => {
+	try {
+		const { sid } = req.params
+
+		//find movie
+		const studio = await Studio.findById(sid, "movies")
+		if (!studio) return res.status(400).json({ error: "Studio does not exist" })
+
+		res.status(200).json(studio.movies)
+	} catch (err) {
+		next(err)
+	}
+}
+
+// @method ---  GET
 // @header --- studio-token
 // @body   ---
 const getStudioMovies = async (req, res, next) => {
@@ -495,6 +512,7 @@ module.exports = {
 	checkNameTaken,
 	getMovieById,
 	getStudioMovies,
+	getStudioMoviesById,
 	isInWatched,
 	isInWishlist,
 	getWatched,
