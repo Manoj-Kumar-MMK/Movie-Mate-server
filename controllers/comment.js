@@ -146,7 +146,7 @@ const modifyComment = async (req, res, next) => {
 
 // @method ---  DELETE
 // @header --- user-token
-// @body   --- cid
+// @params   --- cid
 const deleteCommentById = async (req, res, next) => {
 	try {
 		const { cid } = req.params
@@ -168,7 +168,7 @@ const deleteCommentById = async (req, res, next) => {
 			//remove
 			movie.comments.pull(comment._id)
 			await movie.save({ session })
-			comment.remove({ session })
+			await comment.remove({ session })
 		} catch (err) {
 			await session.abortTransaction()
 			session.endSession()
